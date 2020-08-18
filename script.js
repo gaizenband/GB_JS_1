@@ -1,77 +1,102 @@
 var init = () => {
-//Lesson 3
-
-//№1 - не самое красивое решение, зато собственное
+//Lesson 4
+// №1
 console.log('=============Задание 1=============')
 
-var simpleNums = 2, n, modalCount;
-while (simpleNums <= 100) {
-    modalCount = 0;
-    n = 2;
-    while(n < 10) {
-        if (simpleNums % n++) {
-            modalCount++;
-        }
+var numObj = {};
+
+function numToObj(num) {
+    if (!num || !Number.isInteger(num) || num > 999) {
+        console.log('Wrong argument');
+        return numObj;
     }
-    if (!(modalCount % 8) || simpleNums == 2 || simpleNums == 3 || simpleNums == 5 || simpleNums == 7){
-        console.log(simpleNums);
+    var numArray = num.toString().split('');
+
+    switch(numArray.length) {
+        case 3:
+            numObj.hundreds = numArray[0];
+        case 2:
+            numObj.dozens = numArray[numArray.length - 2]
     }
-    simpleNums++;
+    numObj.units = numArray[numArray.length - 1];//единицы есть всегда, для них проверка не нужна
+    console.log(numObj);
 }
 
+numToObj(23);
 
-//№2-3
-console.log('=============Задание 2-3=============')
+// //Lesson 3
 
-var basket = [
-    {
-        item: 'Item 1',
-        price: 500,
-        count: 2,
-    },
-    {
-        item: 'Item 2',
-        price: 200,
-        count: 6,
-    },
-    {
-        item: 'Item 3',
-        price: 40,
-        count: 21,
-    },
-    {
-        item: 'Item 4',
-        price: 600,
-        count: 1,
-    }
-]
+// //№1 - не самое красивое решение, зато собственное
+// console.log('=============Задание 1=============')
 
-var total = 0;
+// var simpleNums = 2, n, modalCount;
+// while (simpleNums <= 100) {
+//     modalCount = 0;
+//     n = 2;
+//     while(n < 10) {
+//         if (simpleNums % n++) {
+//             modalCount++;
+//         }
+//     }
+//     if (!(modalCount % 8) || simpleNums == 2 || simpleNums == 3 || simpleNums == 5 || simpleNums == 7){
+//         console.log(simpleNums);
+//     }
+//     simpleNums++;
+// }
 
-function countBasketPrice() {
-    basket.forEach(
-        function(value) {
-            console.log('Item: '+ value.item + ' - Price: '+ value.price + ' - Count: '+ value.count);
-            total += value.price * value.count;
-        }
-    )
-    console.log('Total: '+total);
-}
 
-countBasketPrice()
+// //№2-3
+// console.log('=============Задание 2-3=============')
 
-//№4
-console.log('=============Задание 4=============')
+// var basket = [
+//     {
+//         item: 'Item 1',
+//         price: 500,
+//         count: 2,
+//     },
+//     {
+//         item: 'Item 2',
+//         price: 200,
+//         count: 6,
+//     },
+//     {
+//         item: 'Item 3',
+//         price: 40,
+//         count: 21,
+//     },
+//     {
+//         item: 'Item 4',
+//         price: 600,
+//         count: 1,
+//     }
+// ]
 
-for (var i = 0; i <= 9; console.log(i++)) {
+// var total = 0;
 
-}
+// function countBasketPrice() {
+//     basket.forEach(
+//         function(value) {
+//             console.log('Item: '+ value.item + ' - Price: '+ value.price + ' - Count: '+ value.count);
+//             total += value.price * value.count;
+//         }
+//     )
+//     console.log('Total: '+total);
+// }
 
-//№5
-console.log('=============Задание 5=============')
-for (var i = 1; i <= 20; i++) {
-    console.log('x'.repeat(i));
-}
+// countBasketPrice()
+
+// //№4
+// console.log('=============Задание 4=============')
+
+// for (var i = 0; i <= 9; console.log(i++)) {
+
+// }
+
+// //№5
+// console.log('=============Задание 5=============')
+// for (var i = 1; i <= 20; i++) {
+//     console.log('x'.repeat(i));
+// }
 
 // //Lesson 2 - заменил alert на console.log() - для удобства
 // //Изменил названия некоторых переменных, что бы не путались с другим заданием
