@@ -39,8 +39,7 @@ for (let i = 9; i >= 0; i--) {
 
 
         if ((i%2 && j%2 || j%2 == 0 && i%2 == 0) && i != 9 && j != 9 && j && i) {//!j%2 - не работает
-            td.className = 'black';
-            td.id = 'white';
+            td.className = 'black white';
         }
 
         if (i == 9 || j == 9) {

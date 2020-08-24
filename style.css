@@ -22,6 +22,6 @@ td {
     transform: rotate(180deg);
 }
 
-#white {
+.white {
     color: white;
 }
