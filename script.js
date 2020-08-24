@@ -1,4 +1,73 @@
 var init = () => {
+//Lesson 5
+
+const body = document.querySelector('body');
+console.log(body)
+
+const table = document.createElement('table');
+const abc = [' ','A','B','C','D','E','F','J','H',' ']
+
+const chess = {
+    A8: '&#9820;',
+    H1: '&#9820;',
+    B8: '&#9816;',
+    J1: '&#9816;',
+    C8: '&#9821;',
+    F1: '&#9821;',
+    D8: '&#9813;',
+    E1: '&#9813;',
+    E8: '&#9818;',
+    D1: '&#9818;',
+    F8: '&#9815;',
+    C1: '&#9815;',
+    J8: '&#9822;',
+    B1: '&#9822;',
+    H8: '&#9814;',
+    A1: '&#9814;',
+}
+
+for (let i = 9; i >= 0; i--) {
+    let tr = document.createElement('tr');
+    for(let j = 0; j < 10; j++) {
+        let td = document.createElement('td');
+        
+        if ((!j || j == 9) && i && i != 9) {
+            td.innerText = i;
+        } else if (i == 9 || !i) {
+            td.innerText = abc[j];
+        } else {
+            td.innerText = ' ';
+        }
+
+
+        if ((i%2 && j%2 || j%2 == 0 && i%2 == 0) && i != 9 && j != 9 && j && i) {//!j%2 - не работает
+            td.className = 'black';
+            td.id = 'white';
+        }
+
+        if (i == 9 || j == 9) {
+            td.className = 'rotate';
+        }
+ 
+        if (i == 8 || i == 1) {
+            const curBlock = abc[j]+i;
+
+            if (chess.hasOwnProperty(curBlock)) {
+                td.innerHTML = chess[curBlock];
+            }
+        }
+
+        if ((i == 7 || i == 2) && j && j != 9) {
+            td.innerHTML = '&#9823;';
+        }
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+}
+
+body.append(table);
+
+/*
 //Lesson 4
 // №1
 console.log('=============Задание 1=============')
@@ -23,7 +92,7 @@ function numToObj(num) {
 }
 
 numToObj(23);
-
+*/
 // //Lesson 3
 
 // //№1 - не самое красивое решение, зато собственное

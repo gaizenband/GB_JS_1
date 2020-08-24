@@ -1,0 +1,27 @@
+* {
+    text-align: center;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+}
+
+.black {
+    background-color: rgb(0, 0, 0);
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+#white {
+    color: white;
+}
