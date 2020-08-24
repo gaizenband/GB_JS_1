@@ -35,8 +35,6 @@ for (let i = 9; i >= 0; i--) {
             td.innerText = i;
         } else if (i == 9 || !i) {
             td.innerText = abc[j];
-        } else {
-            td.innerText = ' ';
         }
 
 
