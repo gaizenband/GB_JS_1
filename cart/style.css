@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cart {
+    height: 300px;
+    width: 85%;
+    margin: 10px auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.cartItem {
+    margin-bottom: 10px;
+}
+
+.products {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+button {
+    align-self: center;
+    padding: 1px 5px;
+}
+
+.desc {
+    font-size: 12px;
+}

@@ -1,4 +1,49 @@
 var init = () => {
+//Lesson 6
+
+const img = ['1','2','3'];
+const small = document.querySelector('#small');
+const big = document.querySelector('#big');
+const path = '/img/small/';
+const buttons = document.querySelectorAll('button');
+let curImg = 0;
+
+small.src = path + `${img[curImg]}.jpg`;
+big.src = small.src.replace('small','big');
+
+const changePic = (id) => {
+    switch (id) {
+        case 'prev':
+            if (curImg == 0) {
+                curImg = 2;
+            } else {
+                curImg -= 1;
+            }
+            break;
+        case 'next':
+                if (curImg == img.length - 1) {
+                    curImg = 0;
+                } else {
+                    curImg += 1;
+                }
+            break;
+    }
+    small.src = path + `${img[curImg]}.jpg`;
+    big.src = small.src.replace('small','big');
+}
+
+buttons.forEach(img => {
+    img.addEventListener('click', function() {changePic(img.id)});
+});
+
+
+
+
+
+
+
+
+/*
 //Lesson 5
 
 const body = document.querySelector('body');
@@ -63,7 +108,7 @@ for (let i = 9; i >= 0; i--) {
 }
 
 body.append(table);
-
+*/
 /*
 //Lesson 4
 // №1
